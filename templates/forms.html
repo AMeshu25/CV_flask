@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='CV.css') }}">
+    <title>Sign Up | The Perfect Flower</title>
+</head>
+<body>
+    <h1 class="heading">Sign Up</h1> <br>
+    <form action="">
+        <lable for="fname">First name</lable>
+        <input type="text" name="fname" id="fname"> <br>
+        <lable for="lname">Last name</lable>
+        <input type="text" name="lname" id="lname"> <br>
+        <lable for="profilepic">Profile picture</lable>
+        <input type="image" name="profilepic" id="profilepic"> <br>
+        <lable for="bday">Birth Date</lable>
+        <input type="date" name="bday" id="bday"> <br>
+        <lable for="email">E-mail</lable>
+        <input type="email" name="email" id="email"> <br>
+        <lable for="password">Password</lable>
+        <input type="password" name="password" id="password"> <br>
+        <input type="reset" name="reset" id="reset" value="reset">
+        <input type="submit" value="submit">
+        <br>
+    </form>
+    <h1 class="heading">Stay in touch</h1>
+    <form action="">
+        <lable for="fullname">Full name</lable>
+        <input type="text" name="fullname" id="fullname">
+        <lable for="phonenum">Phone number</lable>
+        <input type="tel" name="phonenum" id="phonenum" value="0501234567"> <br>
+        <lable for="comment">Want to tell us something?</lable> <br>
+        <textarea name="comment" id="comment" cols="30" rows="10"></textarea> <br>
+        <input type="submit" value="submit">
+        <br>
+    </form>
+</body>
+</html>

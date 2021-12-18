@@ -1,0 +1,182 @@
+:root {
+    --white: #FFF4E6;
+    --gold: #AE7520;
+    --black: #232220;
+}
+
+@font-face {
+    font-family: Calibri;
+}
+
+body {
+    font-family: Calibri;
+    max-height: 100vh;
+    max-width: 95%;
+}
+
+#gridContainer {
+    display: grid;
+    grid-template-areas:
+    'header header header'
+    'header header header'
+    'menu main main'
+    'menu main main'
+    'menu main main'
+    'menu main main'
+    'menu main main'
+    'contact contact contact';
+}
+
+#headerDiv {
+    grid-area: header;
+    text-align: center;
+    font-size: 130%;
+    /*position: sticky;
+    top: 0px; */
+    max-height: 17vh;
+    background-color: bisque;
+}
+
+.typingEffect {
+    /*animation*/
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: medium solid transparent; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 1px auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: typing 4s steps(37, end),
+    blink-caret 0.75s step-end 3.5;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from {
+        width: 0
+    }
+    to {
+        width: 100%
+    }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent
+    }
+    50% {
+        border-color: brown;
+    }
+}
+
+#menuDiv {
+    grid-area: menu;
+    text-align: center;
+    background-color: maroon;
+    color: blue;
+    margin: 7px;
+    padding: 17px;
+    border: var(--gold) solid 3px;
+    min-width: 70%;
+    font-size: 130%;
+}
+
+#mainDiv {
+    gri-area: main;
+    margin: 7px;
+    padding: 7px;
+}
+
+#profilePic {
+    border-radius: 17%;
+    padding: 3px;
+    border: 1px solid crimson;
+}
+
+#contactDiv {
+    grid-area: contact;
+    text-align: center;
+    display: flex;
+    max-height: 17vh;
+    margin: 3%;
+    padding: 7px;
+}
+
+#contactDiv img {
+    width: 5.3%;
+}
+
+h1, .year {
+    color: darkslategrey;
+}
+
+a {
+    color: bisque;
+}
+
+.menuList {
+    position: sticky;
+    top: 17vh;
+    display: flex;
+    align-content: space-evenly;
+    justify-content: center;
+    flex-flow: column wrap;
+}
+
+a:hover {
+    color: orange;
+}
+
+
+@media only screen and (max-width: 700px) {
+    /* change the grid arrangement*/
+    #gridContainer {
+        display: grid;
+        grid-template-areas:
+    'header header header'
+    'header header header'
+    'menu menu menu'
+    'menu menu menu'
+    'main main main'
+    'main main main'
+    'main main main'
+    'contact contact contact';
+    }
+
+    .menuList {
+        flex-flow: row wrap;
+    }
+
+    #menuDiv {
+        position: sticky;
+        top: 0vh;
+    }
+
+    /* replace the menu list <br> in '|' */
+    #menuDiv br {
+        content: '';
+    }
+
+    #menuDiv br:after {
+        content: '  |   ';
+        color: var(--gold);
+    }
+
+}
+
+/*CV2*/
+.center {
+    text-align: center;
+}
+
+form {
+    display: inline-block;
+}
+
+#goBack {
+    font-size: 200%;
+    background-color: var(--black);
+    margin: 7px;
+    padding: 13px;
+    border: var(--gold) solid 3px;
+    font-size: 130%;
+}

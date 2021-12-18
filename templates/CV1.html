@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='CV.css') }}">
+    <script src="CV.js"></script>
+    <title>CV | Amir Meshurer</title>
+
+</head>
+<body>
+<div id="gridContainer">
+    <div id="headerDiv">
+        <p class="typingEffect">
+            Amir Meshurer<br>
+            INDUSTRIAL ENGINEERING AND MANAGEMENT STUDENT
+        </p>
+    </div> <!--headerDiv -->
+
+    <div id="menuDiv" class="sticky">
+        <div class="menuList">
+            <a href="#aboutMe">About Me</a><br>
+            <a href="#education">Education</a><br>
+            <a href="#experience">Experience</a><br>
+            <a href="#military">Military Service</a><br>
+            <a href="#skills">Skills</a><br>
+            <a href="#languages">Languages</a><br>
+            <a href="CV2.html">Contact Me</a>
+        </div>
+    </div> <!-- menuDiv -->
+
+    <div id="mainDiv">
+        <div id="aboutMe">
+            <h1>ABOUT ME</h1>
+            <img id="profilePic" src="{{url_for('static', filename='ME.jpeg')}}" alt="Me" width="17%"
+                 onclick=changeImgSrc()>
+            <p>I'm a 4th year Industrial Engineering and Management student, with the ability to learn
+            by myself and have good connections with people</p>
+        </div> <!-- aboutMe -->
+
+        <div id="education">
+            <h1>EDUCATION</h1>
+
+            <h3 class="year">2018-Present</h3>
+            <h3 class="blackTitle">B.S: Industrial Engineering and Management | Ben-Gurion University</h3>
+            <p>
+                Doing M.A. degree in Keshet project (graduating 2023). <br>
+                Coursework Highlights: Java Programming,Image proccesing,
+                Machine Learning, Foundation of Algorithms and Complexity, Data Bases, AI programing, . <br>
+                GPA: 82.5 <br>
+            </p>
+
+            <h3 class="year">2013</h3>
+            <h3 class="blackTitle">Harav thumi, Amal 1, Menachem Beggin, Zefat</h3>
+            <p>
+                Graduation Diploma Majored in Physics and Computer sicence.<br>
+            </p>
+        </div> <!-- education -->
+
+        <div id="experience">
+            <h1>EXPERIENCE</h1>
+
+            <h3 class="year">2020-2022</h3>
+            <h3 class="blackTitle">Teaching Assistant | Ben-Gurion University</h3>
+            <p>
+                • “Computer Programming in Java” course <br>
+            </p>
+
+        </div> <!-- experience -->
+
+
+
+        <div id="military">
+            <h1>MILITARY SERVICE</h1>
+
+            <h3 class="year">2013-2017</h3>
+            <h3 class="blackTitle">Unit 405, 451 battalions | Artillery corps</h3>
+            <p>
+                • Combat officer in 155mm cannons <br>
+                • recruit service officer <br>
+                • Department officer in combat battalion <br>
+                • Operation officer of the battalion <br>
+                • Deputy Commander of sergent course <br>
+            </p>
+            <h3 class="year">2018-now</h3>
+            <h3 class="blackTitle">Unit 9260 battalion | Artillery corps Reserve</h3>
+            <p>
+                • Battalion Patrol Department comander <br>
+            </p>
+        </div> <!--military-->
+
+        <div id="skills">
+            <h1>SKILLS</h1>
+            <p>
+                • Java <br>
+                • Python <br>
+                • VB <br>
+                • R <br>
+                • Matlab <br>
+                • C#/C++ <br>
+                • Object Oriented Programming (OOP) <br>
+                • SQL <br>
+            </p>
+
+        </div> <!--skills-->
+
+        <div id="languages">
+            <h1>LANGUAGES</h1>
+            <p>
+                • Hebrew - Native <br>
+                • Russian - Native <br>
+                • English - Competent <br>
+            </p>
+        </div>
+
+        <div id="recommendation">Recommendations will be sent upon request</div>
+        <br>
+
+    </div> <!-- mainDiv -->
+
+    <div id="contactDiv">
+
+        <div id="city">
+            <img src="{{url_for('static', filename='home.png')}}" alt="Home icon">
+            Be'er Sheva
+        </div>
+
+        <div id="phoneNo">
+            <img src="{{url_for('static', filename='phone.png')}}" alt="Phone icon">
+            +972-5424----
+        </div>
+
+        <div id="mail">
+            <img src="{{url_for('static', filename='email.png')}}" alt="E-mail icon">
+           meshurer@post.bgu.ac.il
+        </div>
+
+
+
+    </div> <!-- contactDiv -->
+
+</div> <!-- gridContainer -->
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact Me | Amir Meshurer</title>
+     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='CV.css') }}">
+    <script src="CV.js"></script>
+</head>
+<body>
+<div id="headerDiv">
+    <p class="typingEffect">
+        Amir Meshurer<br>
+        INDUSTRIAL ENGINEERING AND MANAGEMENT STUDENT
+    </p>
+</div> <!--headerDiv -->
+<br>
+
+<div class="center" id="mainDiv">
+    <h1>Impressed?</h1>
+    <h3>Contact me!</h3>
+    <form action="">
+        <label for="fName">First Name</label>
+        <input type="text" name="fName" id="fName"> <br><br>
+        <label for="lName">Last Name</label>
+        <input type="text" name="lName" id="lName"> <br><br>
+        <label for="phoneNum">Phone Number</label>
+        <input type="tel" name="phoneNum" id="phoneNum" pattern="05[0-9]{1}-[0-9]{7}" value="ex: '050-1234567'"> <br><br>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email"> <br><br>
+        <input type="submit" id="inTouch" onclick=beInTouch()>
+    </form>
+    <br><br><br>
+
+    <a href="CV1.html" id="goBack">Go back</a><br>
+</div>
+<br>
+
+<div id="contactDiv">
+
+           <div id="city">
+            <img src="{{url_for('static', filename='home.png')}}" alt="Home icon">
+            Be'er Sheva
+        </div>
+
+        <div id="phoneNo">
+            <img src="{{url_for('static', filename='phone.png')}}" alt="Phone icon">
+            +972-5424----
+        </div>
+
+        <div id="mail">
+            <img src="{{url_for('static', filename='email.png')}}" alt="E-mail icon">
+           meshurer@post.bgu.ac.il
+        </div>
+
+
+
+</div> <!-- contactDiv -->
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+/* By name */
+body{
+    font-family: Tahoma;
+}
+
+input{
+    margin: 7px;
+}
+
+/* By id */
+#profilepic{
+    background-color: purple;
+    color: white;
+    padding: 10px;
+}
+
+/* By class */
+.heading{
+    text-align: center;
+    font-size: 37px;
+    color: navy;
+}
