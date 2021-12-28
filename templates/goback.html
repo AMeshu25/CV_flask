@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/CV.css') }}">
+</head>
+
+<body>
+<!--header include-->
+{% include 'header.html' %}
+
+<main id="mainDiv" class="center">
+    <h1>{% block h1 %}{% endblock %}</h1>
+    <h3>{% block h3 %}{% endblock %}</h3>
+    <br>
+    {% block goBack %}
+        <br><br>
+        <a href="/" id="goBack">Go back</a><br>
+    {% endblock %}
+</main>
+
+<!--contact footer include-->
+{% include 'contact.html' %}
+</body>
+</html>
