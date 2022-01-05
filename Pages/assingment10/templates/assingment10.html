@@ -1,0 +1,62 @@
+{% extends "MAin_block.html" %}
+{% block main_header %}
+<h1>Assignment 10</h1>
+
+
+<h2>ASSIGNMENT 10</h2>
+
+ <h3>Insertion, Update, Deletion & User's list</h3>
+
+    {% for message in get_flashed_messages() %}
+        <span class="alert">{{ message }}</span>
+    {% endfor %}
+    {# insert form #}
+    <h4>Registrate now</h4>
+    <form id="insertionForm" action="/insertUser" method="POST">
+        <label for="name">Name </label>
+        <input type="text" name="name" id="name" required> <br><br>
+        <label for="email">Email: </label>
+        <input type="email" name="email" id="email" placeholder="email@email.email"> <br><br>
+        <label for="b_day">Birth-Date: </label>
+        <input type="date" name="b_day" id="b_day"> <br><br>
+        <label for="nickname">Your nickname: </label>
+        <input type="text" name="nickname" id="nickname"> <br>
+        <input type="submit" id="signUp" class="button" value="Register">
+    </form>
+
+    {# update form #}
+    {% if updateUser %}
+        <h4>Update {{ updateUser.name }}'s details:</h4>
+        <form action="/doneUpdate" method="post">
+            <input type="text" name="name" id="name" placeholder="Name" value="{{ updateUser.name }}" required>
+            <input type="email" name="email" id="email" placeholder="email@email.email"
+                   value="{{ updateUser.email }}">
+            <input type="date" name="b_day" id="b_day" placeholder="Birth Date" value="{{ updateUser.b_day }}">
+            <input type="text" name="favoriteColor" id="favoriteColor" placeholder="Favorite Color"
+                   value="{{ updateUser.favoriteColor }}">
+            <input type="hidden" name="id" id="id" value="{{ updateUser.id }}">
+            <input type="submit" class="smallButton" value="update" onclick=doneUpdate()>
+        </form>
+    {% endif %}
+
+    {# List of users #}
+    <h4>Take a look at the website's users list</h4>
+
+    <div id="usersList">
+        <ul>
+            {% for user in allUsers %}
+                <li>
+                    <form action="/deleteUser" method="post" style="display: inline">
+                        <input type="hidden" name="id" value="{{ user.id }}">
+                        <input type="submit" id="delete" value="Delete" class="smallButton">
+                    </form>
+                    <form action="/updateUser" method="post" style="display: inline">
+                        <input type="hidden" name="id" value="{{ user.id }}">
+                        <input type="submit" id="update" value="Update" class="smallButton" onclick=updateMod()>
+                    </form>
+                    Name: {{ user.name }} Email: {{ user.email }} B-day: {{ user.b_day }}
+                    nickname: {{ user.nickname }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

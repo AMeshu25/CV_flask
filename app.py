@@ -1,6 +1,7 @@
 from flask import Flask, render_template, url_for, request,session,redirect
 import mysql.connector
 app = Flask(__name__)
+# app.config.from_pyfile('settings.py')
 app.secret_key='123456'
 users = {'user1': {'name': 'Amir', 'email': 'AM@gmail.com', 'nickname': 'Miri', 'b-day': '25/05/1995 '},
          'user2': {'name': 'Or', 'email': 'Orda@gmail.com', 'nickname': 'Orcha', 'b-day': '20/08/1995'},
@@ -62,5 +63,11 @@ def something_page():  # put application's code here
     return render_template('assignment8.html', user = {'firstname': 'Amir', 'lastname':'Meshurer'},
                            hobbies = ['Not that intrensting man', 'beer'], movies =('EuroTrip','American Pie'))
 
+
+#assignment10 blueprint
+from Pages.assingment10.assingment10 import assignment10
+app.register_blueprint(assignment10)
+
+
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
