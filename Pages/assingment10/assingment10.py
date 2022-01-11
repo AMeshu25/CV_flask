@@ -18,7 +18,7 @@ def assignment10func():
     query = 'select * from users;'
 
     allUsers = interact_db(query=query, query_type='fetch')  # users list
-    return render_template('assingment10.html', allUsers=allUsers)  # includs users list
+    return render_template('assingment10.html', allUsers=allUsers, updateUser=updateUser)  # includs users list
 
 
 @assignment10.route('/insertUser', methods=['post'])
@@ -33,8 +33,8 @@ def insertUserFunc():
         b_day = request.form['b_day']
     else:
         b_day = '1990-02-05'
-    if request.form['favoriteColor']:
-        nickname = request.form['favoriteColor']
+    if request.form['nickname']:
+        nickname = request.form['nickname']
     else:
         nickname = ''
     # insert to DB
