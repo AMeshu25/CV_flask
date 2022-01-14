@@ -64,6 +64,9 @@ def something_page():  # put application's code here
                            hobbies = ['Not that intrensting man', 'beer'], movies =('EuroTrip','American Pie'))
 
 
+
+
+
 #assignment10 blueprint
 from Pages.assingment10.assingment10 import assignment10
 app.register_blueprint(assignment10)

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src={{ url_for('assingment10.static', filename ='assignment11.js') }}></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="text-align: center" >
+{#<form action= "">#}
+<h2> Frontend</h2>
+        <input type="number" name="number_frontend" id="worker_id">
+        <input type="submit" value="Get User" onclick="getUsers()">
+{#</form>#}
+
+<form action="/assignment11/outer_source" method ='GET'>
+    <h2>Backend</h2>
+    <input type="number" name="number_backend" id="worker_id">
+        <input type="submit" value="Get User">
+</form>
+{% if User %}
+        <img src="{{ User.data.avatar }}" alt="picture">
+        <br>
+        ID {{ User.data.id }}
+        <br>
+        First Name: {{ User.data.first_name }}
+        <br>
+        Last Name: {{ User.data.last_name }}
+        <br>
+        Contact email: {{ User.data.email }}
+    {% endif %}
+<main></main>
+</body>
+</html>

@@ -13,6 +13,7 @@ def interact_db(query, query_type: str):
     #     'use_pure': True,
     # }
     connection = mysql.connector.connect(host='localhost',
+                                         port = '3702',
                                          user='root',
                                          passwd='root',
                                          database='flaskdb')

@@ -1,7 +1,7 @@
-from flask import Blueprint, render_template, flash
+from flask import Blueprint, render_template, flash, jsonify
 from flask import Flask, redirect, url_for, session, request
+import requests
 from interactDB import interact_db
-
 
 # assignment10
 global updateUser
@@ -19,6 +19,7 @@ def assignment10func():
 
     allUsers = interact_db(query=query, query_type='fetch')  # users list
     return render_template('assingment10.html', allUsers=allUsers, updateUser=updateUser)  # includs users list
+
 
 
 @assignment10.route('/insertUser', methods=['post'])
@@ -79,3 +80,27 @@ def doneUpdateFunc():
     interact_db(query, 'commit')
     flash("%s's user updated successfully" % name)
     return redirect('/assignment10')
+
+
+@assignment10.route('/assignment11/users')
+def Assignment11():  # put application's code here
+    query = ' select * from users;'
+    users = interact_db(query=query, query_type='fetch')
+    response = jsonify(users)
+    return response
+    # return render_template('assignment11.html',allUser_dict = allUser_json)
+
+def get_user(num):
+    res = requests.get(f'https://reqres.in/api/users/{num}')
+    res = res.json()
+    return res
+
+@assignment10.route('/assignment11/outer_source')
+def assignment11_outer_source_func():
+    num = 1
+    if "number_backend" in request.args:
+        num = int(request.args['number_backend'])
+        user = get_user(num)
+        return render_template('assignment11.html', User=user)
+    return render_template('assignment11.html')
+
