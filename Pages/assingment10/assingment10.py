@@ -104,3 +104,24 @@ def assignment11_outer_source_func():
         return render_template('assignment11.html', User=user)
     return render_template('assignment11.html')
 
+
+@assignment10.route('/assignment12/restapi_users', defaults={'user_id': 1})
+@assignment10.route('/assignment12/restapi_users/<int:user_id>')
+def get_users_func(user_id):
+    query = 'select * from users where id=%s;' % user_id
+    users = interact_db(query=query, query_type='fetch')
+    if len(users) == 0:
+        return_dict = {
+            'status': 'Error!!!!!!',
+            'message': 'user was not found try different id'
+        }
+    else:
+        return_dict = {
+            'status': 'Found the guy',
+            'id': users[0].id,
+            'name': users[0].name,
+            'email': users[0].email,
+            'b_day': users[0].b_day,
+            'nickname': users[0].nickname,
+        }
+    return jsonify(return_dict)
